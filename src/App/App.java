@@ -4,7 +4,7 @@ import Gestión.GestorAlumnos;
 import Input.Input;
 import Output.Output;
 
-public class App {
+public class  App {
     public static void main(String[] args) {
         GestorAlumnos gestor = new GestorAlumnos();
         Input input = new Input();
