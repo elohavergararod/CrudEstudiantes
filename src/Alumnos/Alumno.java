@@ -1,6 +1,5 @@
 package Alumnos;
 
-import java.util.*;
 
 public class Alumno {
     private int id;
