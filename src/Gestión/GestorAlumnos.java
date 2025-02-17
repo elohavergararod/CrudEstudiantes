@@ -14,22 +14,25 @@ public class GestorAlumnos {
     private Output output = new Output();
 
     public void agregarAlumno() {
-        for (int i = 0; i < 2; i++) {
-            Output.mostrarMensaje("Ingrese ID único del alumno:");
+        output.mostrarMensaje("¿Cuántos alumnos desea agregar?");
+        int cantidad = input.obtenerEntero();
+        for (int i = 0; i < cantidad; i++) {
+            output.mostrarMensaje("Ingrese ID único del alumno:");
             int id = input.obtenerEntero();
-            Output.mostrarMensaje("Ingrese nombre completo:");
+            output.mostrarMensaje("Ingrese nombre completo:");
             String nombre = input.obtenerTexto();
-            Output.mostrarMensaje("Ingrese edad:");
+            output.mostrarMensaje("Ingrese edad:");
             int edad = input.obtenerEntero();
+            output.mostrarMensaje("Ingrese fecha de nacimiento (dd/mm/aaaa):");
             Output.mostrarMensaje("Ingrese fecha de nacimiento (dd/mm/aaaa):");
             String fechaNacimiento = input.obtenerTexto();
-            Output.mostrarMensaje("Ingrese primera asignatura:");
+            output.mostrarMensaje("Ingrese primera asignatura:");
             String asignatura1 = input.obtenerTexto();
-            Output.mostrarMensaje("Ingrese nota de la primera evaluación:");
+            output.mostrarMensaje("Ingrese nota de la primera evaluación:");
             double nota1 = input.obtenerDouble();
-            Output.mostrarMensaje("Ingrese segunda asignatura:");
+            output.mostrarMensaje("Ingrese segunda asignatura:");
             String asignatura2 = input.obtenerTexto();
-            Output.mostrarMensaje("Ingrese nota de la segunda evaluación:");
+            output.mostrarMensaje("Ingrese nota de la segunda evaluación:");
             double nota2 = input.obtenerDouble();
 
             alumnos.add(new Alumno(id, nombre, edad, fechaNacimiento, asignatura1, nota1, asignatura2, nota2));
@@ -39,12 +42,17 @@ public class GestorAlumnos {
         output.listarAlumnos(alumnos);
         output.mostrarMensaje("Ingrese el ID del alumno a eliminar:");
         int id = input.obtenerEntero();
+        boolean found = false;
         Iterator<Alumno> iter = alumnos.iterator();
         while (iter.hasNext()) {
             if (iter.next().getId() == id) {
                 iter.remove();
+                found = true;
                 break;
             }
+        }
+        if (!found) {
+            output.mostrarMensaje("Alumno no encontrado.");
         }
     }
 

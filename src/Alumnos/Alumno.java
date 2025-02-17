@@ -1,6 +1,5 @@
 package Alumnos;
 
-import java.util.*;
 
 public class Alumno {
     private int id;
@@ -22,7 +21,14 @@ public class Alumno {
         this.asignatura2 = asignatura2;
         this.nota2 = nota2;
     }
-    
+    public int getId() {
+        return id;
+    }
+    public void setNota1(double nota) {
+        this.nota1 = nota;
+    }
+
+
     @Override
     public String toString() {
         return id + "\t" + nombre + "\t" + asignatura1 + " (" + nota1 + ")\t" + asignatura2 + " (" + nota2 + ")";

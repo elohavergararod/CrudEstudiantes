@@ -5,15 +5,26 @@ public class Input {
     private Scanner scanner = new Scanner(System.in);
 
     public int obtenerEntero() {
-        return scanner.nextInt();
+        while (!scanner.hasNextInt()) {
+            System.out.println("Entrada inválida. Ingrese un número entero:");
+            scanner.next();
+        }
+        int numero = scanner.nextInt();
+        scanner.nextLine();
+        return numero;
     }
 
     public double obtenerDouble() {
-        return scanner.nextDouble();
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Entrada inválida. Ingrese un número decimal:");
+            scanner.next();
+        }
+        double numero = scanner.nextDouble();
+        scanner.nextLine();
+        return numero;
     }
 
     public String obtenerTexto() {
-        scanner.nextLine();
         return scanner.nextLine();
     }
 }
