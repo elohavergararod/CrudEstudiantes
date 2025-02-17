@@ -17,6 +17,7 @@ public class Output {
     }
 
     public static void mostrarMenu() {
+
         System.out.println("Seleccione una opción:");
         System.out.println("1. Alta");
         System.out.println("2. Baja");
