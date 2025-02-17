@@ -9,14 +9,14 @@ public class App {
         GestorAlumnos gestor = new GestorAlumnos();
         Input input = new Input();
         Output output = new Output();
-        int opcion;
+        int opcionEscogida;
 
         do {
             output.mostrarMenu();
             output.mostrarMensaje("Escoge una opción: ");
-            opcion = input.obtenerEntero();
+            opcionEscogida = input.obtenerEntero();
 
-            switch (opcion) {
+            switch (opcionEscogida) {
                 case 1 -> gestor.agregarAlumno();
                 case 2 -> gestor.eliminarAlumno();
                 case 3 -> gestor.modificarNota();
@@ -24,6 +24,6 @@ public class App {
                 case 5 -> output.mostrarMensaje("Saliendo...");
                 default -> output.mostrarMensaje("Opción inválida");
             }
-        } while (opcion != 5);
+        } while (opcionEscogida != 5);
     }
 }
