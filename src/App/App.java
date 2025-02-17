@@ -24,6 +24,7 @@ public class App {
                 case 5 -> output.mostrarMensaje("Saliendo...");
                 default -> output.mostrarMensaje("Opción inválida");
             }
+
         } while (opcionEscogida != 5);
     }
 }
