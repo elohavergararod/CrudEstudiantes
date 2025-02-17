@@ -16,6 +16,7 @@ public class GestorAlumnos {
     public void agregarAlumno() {
         output.mostrarMensaje("¿Cuántos alumnos desea agregar?");
         int cantidad = input.obtenerEntero();
+
         for (int i = 0; i < cantidad; i++) {
             output.mostrarMensaje("Ingrese ID único del alumno:");
             int id = input.obtenerEntero();
